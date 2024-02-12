@@ -1,7 +1,7 @@
 use std::sync::{Arc,Mutex};
 use std::thread;
 
-pub fn run() {
+pub fn run() -> i32 {
     let counter = Arc::new(Mutex::new(0));
     let counter2 = Arc::clone(&counter);
 
@@ -14,4 +14,15 @@ pub fn run() {
 
     let value = counter.lock().unwrap();
     println!("Counter: {}", *value);
+    *value
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    
+    #[test]
+    fn test_run() {
+        assert_eq!(run(), 1);
+    }
 }
