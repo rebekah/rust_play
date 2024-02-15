@@ -1,4 +1,4 @@
-use std::sync::{Arc,Mutex};
+use std::sync::{Arc, Mutex};
 use std::thread;
 
 pub fn run() -> i32 {
@@ -20,7 +20,7 @@ pub fn run() -> i32 {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_run() {
         assert_eq!(run(), 1);

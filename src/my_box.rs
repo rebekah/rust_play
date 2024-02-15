@@ -1,9 +1,9 @@
 pub fn return_a_box_with_an_int() -> Box<dyn std::any::Any> {
-  return Box::new(5);
+    return Box::new(5);
 }
 
 pub fn return_a_box_with_an_string() -> Box<dyn std::any::Any> {
-  return Box::new("my string");
+    return Box::new("my string");
 }
 
 //fn play_with_boxes(){
@@ -17,31 +17,31 @@ pub fn return_a_box_with_an_string() -> Box<dyn std::any::Any> {
 //  }
 //}
 
-#[cfg(test)] 
+#[cfg(test)]
 mod test {
-  use super::*;
+    use super::*;
 
-  #[test]
-  fn test_box_with_string() {
-    let boxed = return_a_box_with_an_string();
-    let boxed_val = &*boxed;
-    let is_str = if let Some(_) = boxed_val.downcast_ref::<&str>() {
-      true
-    } else {
-        false
-    };
-    assert!(is_str);
-  }
+    #[test]
+    fn test_box_with_string() {
+        let boxed = return_a_box_with_an_string();
+        let boxed_val = &*boxed;
+        let is_str = if let Some(_) = boxed_val.downcast_ref::<&str>() {
+            true
+        } else {
+            false
+        };
+        assert!(is_str);
+    }
 
-  #[test]
-  fn test_box_with_int() {
-    let boxed = return_a_box_with_an_int();
-    let boxed_val = &*boxed;
-    let is_str = if let Some(_) = boxed_val.downcast_ref::<i32>() {
-      true
-    } else {
-        false
-    };
-    assert!(is_str);
-  }
+    #[test]
+    fn test_box_with_int() {
+        let boxed = return_a_box_with_an_int();
+        let boxed_val = &*boxed;
+        let is_str = if let Some(_) = boxed_val.downcast_ref::<i32>() {
+            true
+        } else {
+            false
+        };
+        assert!(is_str);
+    }
 }
