@@ -11,7 +11,9 @@ impl Test {
     }
 
     pub fn run(&mut self) {
-        for i in (0..self.list.len()) {
+        for i in 0..self.list.len()
+        
+         {
             self.do_something(self.list[i])
         }
 
